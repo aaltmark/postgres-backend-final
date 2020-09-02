@@ -27,7 +27,7 @@ class LessonsController < ApplicationController
     def destroy 
         lesson = Lesson.find_by(id: params[:id])
         lesson.destroy 
-        render json: { message: 'lesson has been deleted'}
+        render json: lesson
     end 
 
     private 
