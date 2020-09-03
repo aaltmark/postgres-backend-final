@@ -488,18 +488,20 @@ while i < Instructor.all.length
 end 
  
 schedules = [
-    {date: "Fri Sep 04 2020", available: true, instructor_id: 2},
-    {date: "Sat Sep 05 2020", available: true, instructor_id: 2},
-    {date: "Sun Sep 06 2020", available: true, instructor_id: 2},
-    {date: "Mon Sep 07 2020", available: true, instructor_id: 2},
-    {date: "Tue Sep 08 2020", available: true, instructor_id: 2},
-    {date: "Wed Sep 09 2020", available: true, instructor_id: 2},
-    {date: "Thu Sep 10 2020", available: true, instructor_id: 2},
-    {date: "Fri Sep 12 2020", available: true, instructor_id: 2},
-    {date: "Sat Sep 12 2020", available: true, instructor_id: 2},
-    {date: "Sun Sep 13 2020", available: true, instructor_id: 2},
-    {date: "Mon Sep 14 2020", available: true, instructor_id: 2},
-    {date: "Tue Sep 15 2020", available: true, instructor_id: 2},
+    {date: "Fri Sep 04 2020", available: true, instructor_id: 1},
+    {date: "Sat Sep 05 2020", available: true, instructor_id: 1},
+    {date: "Sun Sep 06 2020", available: true, instructor_id: 1},
+    {date: "Mon Sep 07 2020", available: true, instructor_id: 1},
+    {date: "Tue Sep 08 2020", available: true, instructor_id: 1},
+    {date: "Wed Sep 09 2020", available: true, instructor_id: 1},
+    {date: "Thu Sep 10 2020", available: true, instructor_id: 1},
+    {date: "Fri Sep 12 2020", available: true, instructor_id: 1},
+    {date: "Sat Sep 12 2020", available: true, instructor_id: 1},
+    {date: "Sun Sep 13 2020", available: true, instructor_id: 1},
+    {date: "Mon Sep 14 2020", available: true, instructor_id: 1},
+    {date: "Tue Sep 15 2020", available: true, instructor_id: 1},
 
 ]
 Schedule.create(schedules)
+
+User.create(name: "Adam Altmark", phone: "9737472706", dob: 19941219, email: "adamaltmark@gmail.com", password_digest: "123")
