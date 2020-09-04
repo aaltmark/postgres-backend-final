@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:show, :create]
+
     def show 
         user = User.find_by(id: params[:id])
         render json: {user: UserSerializer.new(user)} #, include: [:reviews]
@@ -30,6 +32,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :username, :password, :location, :bio, :image)
+        params.permit(:name, :email, :password)
     end
 end
