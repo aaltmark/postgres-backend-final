@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :experiences
   resources :users
   resources :schedules
   resources :resorts

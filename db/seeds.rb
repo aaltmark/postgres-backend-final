@@ -505,3 +505,10 @@ schedules = [
 Schedule.create(schedules)
 
 User.create(name: "Adam Altmark", phone: "9737472706", dob: 19941219, email: "adamaltmark@gmail.com", password_digest: "123")
+
+experiences = [
+    {instructor_id: 1, category: "Certification", name: "PSIA Alpine Level II", year: "2012"},
+    {instructor_id: 1, category: "Work", name: "Beaver Creek", year: "2010-2012"},
+    {instructor_id: 1, category: "Work", name: "Big Sky", year: "2013-2019"}
+]
+Experience.create(experiences)
