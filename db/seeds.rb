@@ -504,7 +504,7 @@ schedules = [
 ]
 Schedule.create(schedules)
 
-User.create(name: "Adam Altmark", phone: "9737472706", dob: 19941219, email: "adamaltmark@gmail.com", password_digest: "123")
+# User.create(name: "Adam Altmark", phone: "9737472706", dob: 19941219, email: "adamaltmark@gmail.com", password_digest: "123")
 
 experiences = [
     {instructor_id: 1, category: "Certification", name: "PSIA Alpine Level II", year: "2012"},
