@@ -477,7 +477,15 @@ require 'faker'
 end 
 
 100.times do 
+    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city)
+end 
+
+100.times do 
     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city) 
+end 
+
+100.times do 
+    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city) 
 end 
 
 i = 0 
@@ -486,23 +494,24 @@ while i < Instructor.all.length
     InstructorResort.create(instructor_id: instructor.id, resort_id: rand(459))
     i += 1
 end 
- 
-schedules = [
-    {date: "Fri Sep 04 2020", available: true, instructor_id: 1},
-    {date: "Sat Sep 05 2020", available: true, instructor_id: 1},
-    {date: "Sun Sep 06 2020", available: true, instructor_id: 1},
-    {date: "Mon Sep 07 2020", available: true, instructor_id: 1},
-    {date: "Tue Sep 08 2020", available: true, instructor_id: 1},
-    {date: "Wed Sep 09 2020", available: true, instructor_id: 1},
-    {date: "Thu Sep 10 2020", available: true, instructor_id: 1},
-    {date: "Fri Sep 12 2020", available: true, instructor_id: 1},
-    {date: "Sat Sep 12 2020", available: true, instructor_id: 1},
-    {date: "Sun Sep 13 2020", available: true, instructor_id: 1},
-    {date: "Mon Sep 14 2020", available: true, instructor_id: 1},
-    {date: "Tue Sep 15 2020", available: true, instructor_id: 1},
 
-]
-Schedule.create(schedules)
+c = 0 
+while c < Instructor.all.length  
+    instructor = Instructor.all[c]
+    schedules = [
+        {date: "Mon Sep 07 2020", available: true, instructor_id: instructor.id},
+        {date: "Tue Sep 08 2020", available: true, instructor_id: instructor.id},
+        {date: "Wed Sep 09 2020", available: true, instructor_id: instructor.id},
+        {date: "Thu Sep 10 2020", available: true, instructor_id: instructor.id},
+        {date: "Fri Sep 12 2020", available: true, instructor_id: instructor.id},
+        {date: "Sat Sep 12 2020", available: true, instructor_id: instructor.id},
+        {date: "Sun Sep 13 2020", available: true, instructor_id: instructor.id},
+        {date: "Mon Sep 14 2020", available: true, instructor_id: instructor.id},
+        {date: "Tue Sep 15 2020", available: true, instructor_id: instructor.id}
+    ]
+    Schedule.create(schedules)
+    c += 1
+end 
 
 # User.create(name: "Adam Altmark", phone: "9737472706", dob: 19941219, email: "adamaltmark@gmail.com", password_digest: "123")
 
