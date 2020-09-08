@@ -472,26 +472,26 @@ Resort.create(resorts)
 require 'faker'
 
 
-100.times do 
+10.times do 
     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city)
 end 
 
-100.times do 
+10.times do 
     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city)
 end 
 
-100.times do 
+10.times do 
     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city) 
 end 
 
-100.times do 
+10.times do 
     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city) 
 end 
 
 i = 0 
 while i < Instructor.all.length 
     instructor = Instructor.all[i]
-    InstructorResort.create(instructor_id: instructor.id, resort_id: rand(459))
+    InstructorResort.create(instructor_id: instructor.id, resort_id: 111)
     i += 1
 end 
 
