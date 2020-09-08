@@ -29,7 +29,8 @@ class InstructorSerializer < ActiveModel::Serializer
                 user_id: review.user_id, 
                 user_name: review.user_name, 
                 rating: review.rating, 
-                content: review.content
+                content: review.content,
+                created: review.created_at
             }
         end 
     end 

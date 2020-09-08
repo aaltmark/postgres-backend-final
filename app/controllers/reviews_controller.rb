@@ -6,6 +6,11 @@ class ReviewsController < ApplicationController
         render json: reviews
     end 
 
+    def show 
+        review = Review.find_by(id: params[:id])
+        render json: {review: ReviewSerializer.new(review)} #, include: [:reviews]
+    end 
+
     def create 
         @review = Review.create(review_params)
         if @review.valid? 

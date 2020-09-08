@@ -7,6 +7,11 @@ class LessonsController < ApplicationController
         render json: lessons
     end 
 
+    def show 
+        lesson = Lesson.find_by(id: params[:id])
+        render json: {lesson: LessonSerializer.new(lesson)} #, include: [:reviews]
+    end 
+
     def create 
         @lesson = Lesson.create(lesson_params)
         # byebug
