@@ -472,21 +472,29 @@ Resort.create(resorts)
 require 'faker'
 
 
-5.times do 
+Instructor.create(name: "Jack G", phone: 9899999898, dob: 19940214, email: Faker::Internet.email, specialty: "Ski", image: "https://i.ibb.co/bQBy8c5/IMG-8170.jpg", years_experience: 3, certification: true, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
+
+Instructor.create(name: "Yack-O G", phone: 9899999898, dob: 19940214, email: Faker::Internet.email, specialty: "Snowboard", image: "https://i.ibb.co/LPgPHr4/IMG-6012.jpg", years_experience: rand(15), certification: true, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
+Instructor.create(name: "Edge Signer", phone: 9899999898, dob: 19940524, email: Faker::Internet.email, specialty: "Snowboard", image: "https://i.ibb.co/tqSTwcL/IMG-0160.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
+
+Instructor.create(name: "Baills Seend", phone: 9899999898, dob: 19940508, email: Faker::Internet.email, specialty: "Snowboard", image: "https://i.ibb.co/pRRZdpL/Full-Size-Render.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
+Instructor.create(name: "Shooter McGavin", phone: 9899999898, dob: 19940704, email: Faker::Internet.email, specialty: "Ski", image: "https://i.ibb.co/NY37Hdx/Full-Size-Render-1.jpg", years_experience: rand(15), certification: true, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
+Instructor.create(name: "Juicy J", phone: 9899999898, dob: 19950129, email: Faker::Internet.email, specialty: "Ski", image: "https://i.ibb.co/XFM4CsN/IMG-0159.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
+7.times do 
     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
 end 
 
-5.times do 
-    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
-end 
+# 7.times do 
+#     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
+# end 
 
-5.times do 
+7.times do 
     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city) 
 end 
 
-5.times do 
-    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city) 
-end 
+# 5.times do 
+#     Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city) 
+# end 
 
 i = 0 
 while i < Instructor.all.length 
@@ -517,9 +525,9 @@ experiences = [
     {instructor_id: 1, category: "Certification", name: "PSIA Alpine Level II", year: "2012"},
     {instructor_id: 1, category: "Work", name: "Beaver Creek", year: "2010-2012"},
     {instructor_id: 1, category: "Work", name: "Big Sky", year: "2013-2019"},
-    {instructor_id: 11, category: "Certification", name: "AASI Snowboard Level III", year: "2006"},
-    {instructor_id: 11, category: "Certification", name: "Children's Specialist 1", year: "2010"},
-    {instructor_id: 11, category: "Work", name: "Hunter Mountain", year: "2000-2020"}
+    {instructor_id: 2, category: "Certification", name: "AASI Snowboard Level III", year: "2006"},
+    {instructor_id: 2, category: "Certification", name: "Children's Specialist 1", year: "2010"},
+    {instructor_id: 2, category: "Work", name: "Hunter Mountain", year: "2000-2020"}
 ]
 Experience.create(experiences)
 
@@ -527,6 +535,6 @@ Experience.create(experiences)
     User.create(name: Faker::Name.name, phone: "9899899988", dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, password_digest: "123")
 end 
 
-300.times do 
-    Review.create(user_id: rand(10), instructor_id: rand(20), rating: rand(10), content: Faker::Quote.most_interesting_man_in_the_world, user_name: Faker::Superhero.name)
+50.times do 
+    Review.create(user_id: rand(10), instructor_id: rand(6), rating: rand(10), content: Faker::Quote.most_interesting_man_in_the_world, user_name: Faker::Superhero.name)
 end 
