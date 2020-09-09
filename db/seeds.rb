@@ -472,20 +472,20 @@ Resort.create(resorts)
 require 'faker'
 
 
-10.times do 
-    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city)
+5.times do 
+    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
 end 
 
-10.times do 
-    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city)
+5.times do 
+    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Ski", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city)
 end 
 
-10.times do 
-    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city) 
+5.times do 
+    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: true, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city) 
 end 
 
-10.times do 
-    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::TvShows::SouthPark.quote, hometown: Faker::Address.city) 
+5.times do 
+    Instructor.create(name: Faker::Name.name, phone: 9877877654, dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, specialty: "Snowboard", image: "https://www.skiutah.com/media-room/Press-Room/index.html/Anelise-Bergin-Headshot-MediaPage-500wX644h.jpg", years_experience: rand(15), certification: false, bio: Faker::Movies::StarWars.quote, hometown: Faker::Address.city) 
 end 
 
 i = 0 
@@ -499,15 +499,13 @@ c = 0
 while c < Instructor.all.length  
     instructor = Instructor.all[c]
     schedules = [
-        {date: "Mon Sep 07 2020", available: true, instructor_id: instructor.id},
-        {date: "Tue Sep 08 2020", available: true, instructor_id: instructor.id},
-        {date: "Wed Sep 09 2020", available: true, instructor_id: instructor.id},
-        {date: "Thu Sep 10 2020", available: true, instructor_id: instructor.id},
-        {date: "Fri Sep 12 2020", available: true, instructor_id: instructor.id},
+        {date: "Fri Sep 11 2020", available: true, instructor_id: instructor.id},
         {date: "Sat Sep 12 2020", available: true, instructor_id: instructor.id},
         {date: "Sun Sep 13 2020", available: true, instructor_id: instructor.id},
         {date: "Mon Sep 14 2020", available: true, instructor_id: instructor.id},
-        {date: "Tue Sep 15 2020", available: true, instructor_id: instructor.id}
+        {date: "Tue Sep 15 2020", available: true, instructor_id: instructor.id},
+        {date: "Wed Sep 16 2020", available: true, instructor_id: instructor.id},
+        {date: "Thu Sep 17 2020", available: true, instructor_id: instructor.id}
     ]
     Schedule.create(schedules)
     c += 1
@@ -521,3 +519,11 @@ experiences = [
     {instructor_id: 1, category: "Work", name: "Big Sky", year: "2013-2019"}
 ]
 Experience.create(experiences)
+
+10.times do 
+    User.create(name: Faker::Name.name, phone: "9899899988", dob: Faker::Date.between(from: '1970-09-23', to: '1996-09-25'), email: Faker::Internet.email, password_digest: "123")
+end 
+
+300.times do 
+    Review.create(user_id: rand(10), instructor_id: rand(20), rating: rand(10), content: Faker::Quote.most_interesting_man_in_the_world, user_name: Faker::Superhero.name)
+end 
