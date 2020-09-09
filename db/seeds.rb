@@ -516,7 +516,10 @@ end
 experiences = [
     {instructor_id: 1, category: "Certification", name: "PSIA Alpine Level II", year: "2012"},
     {instructor_id: 1, category: "Work", name: "Beaver Creek", year: "2010-2012"},
-    {instructor_id: 1, category: "Work", name: "Big Sky", year: "2013-2019"}
+    {instructor_id: 1, category: "Work", name: "Big Sky", year: "2013-2019"},
+    {instructor_id: 11, category: "Certification", name: "AASI Snowboard Level III", year: "2006"},
+    {instructor_id: 11, category: "Certification", name: "Children's Specialist 1", year: "2010"},
+    {instructor_id: 11, category: "Work", name: "Hunter Mountain", year: "2000-2020"}
 ]
 Experience.create(experiences)
 
